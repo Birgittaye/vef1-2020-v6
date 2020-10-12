@@ -1,2 +1,52 @@
 // Sækja config
 // Allir stílar fyrir events
+
+$basic-size: 12.5em;
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin showing {
+  @include flex-center;
+
+  margin: auto;
+  text-align: center;
+}
+
+.center-items {
+  @include flex-center;
+}
+
+.events {
+  > div {
+    word-break: break-all;
+  }
+
+  > div > p {
+    font-style: italic;
+  }
+}
+
+.to-hide {
+  @include showing;
+}
+
+.to-show {
+  display: none;
+}
+
+.hover-to-show {
+  height: #{$basic-size};
+  margin: 0.5em;
+
+  &:hover .to-show {
+    @include showing;
+  }
+
+  &:hover .to-hide {
+    display: none;
+  }
+}

@@ -1,2 +1,74 @@
 // Sækja config
 // Allir stílar fyrir "global", þ.e.a.s. type selectorar, reset etc
+
+$color-black: #eee;
+
+$color-white: #222;
+
+@mixin monochrome($normal: true) {
+  @if ($normal) {
+    background-color: $color-white;
+    color: $color-black;
+  }
+
+  @else {
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $color-white;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: $color-white;
+}
+
+button {
+  @include monochrome($normal: true);
+
+  border: 1px solid $color-black;
+  border-radius: 0.5em;
+  font-size: 0.675em;
+  height: 100%;
+  padding: 1em;
+  transition: color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    @include monochrome($normal: false);
+  }
+
+  &:active {
+    @include monochrome($normal: true);
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montaga', Georgia, serif;
+}
+
+div {
+  align-content: space-between;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box {
+  box-sizing: content-box;
+  margin: 0.5em;
+}

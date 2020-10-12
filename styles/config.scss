@@ -1,3 +1,26 @@
 // Hér eiga að vera stillingar með scss breytum fyrir:
 // grid, max-width á síðu, transitions,
 // liti, margin-bottom gildi sem eru sameiginleg
+
+$max-width: 1400px;
+
+$margin-small: 10px;
+
+.grid {
+  margin: 0 auto;
+  max-width: $max-width;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: (-1) * $margin-small;
+  margin-right: (-1) * $margin-small;
+}
+
+.col {
+  padding-left: $margin-small;
+  padding-right: $margin-small;
+  width: 100%;
+}

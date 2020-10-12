@@ -1,2 +1,13 @@
 // Sækja config
 // Allir stílar fyrir haus
+
+header {
+  background-image: url('img/background.jpg');
+  background-size: auto 100%;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  height: 1280px;
+  justify-content: center;
+  text-align: center;
+}

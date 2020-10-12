@@ -2,3 +2,33 @@
 @import './config';
 
 // Hér skal nota scss @for til að ítra út klösum fyrir grid
+
+$sizes: 25, 33;
+
+$screen-sizes: 800px, 500px;
+
+
+@each $size in $sizes {
+  .col-#{$size} {
+    width: calc(#{$size}% - 1em);
+  }
+}
+
+
+@media (max-width: nth($screen-sizes, 1)) {
+
+  .col-#{nth($sizes, 1)} {
+    width: calc(50% - 1em)
+  }
+
+  .col-#{nth($sizes, 2)} {
+    width: calc(100% - 1em)
+  }
+}
+
+@media (max-width: nth($screen-sizes, 2)) {
+
+  .col-#{nth($sizes, 1)} {
+    width: calc(100% - 1em)
+  }
+}
